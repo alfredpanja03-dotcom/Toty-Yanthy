@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Undangan Pernikahan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<!-- COVER -->
+<section id="cover" style="background-image:url('img/cover.jpg')">
+  <div class="cover-box">
+    <p>Undangan Pernikahan</p>
+    <h1 data-bind="title"></h1>
+    <p data-bind="dateLong"></p>
+    <div class="guest">
+      <small>Kepada Yth. Bapak/Ibu/Saudara/i</small>
+      <strong id="guestName">Tamu Undangan</strong>
+      <small>di Tempat</small>
+    </div>
+    <button id="openBtn">Buka Undangan</button>
+  </div>
+</section>
+
+<main>
+  <!-- HERO + COUNTDOWN -->
+  <section id="hero" style="background-image:url('img/cover.jpg')">
+    <div class="cover-box">
+      <p>The Wedding of</p>
+      <h1 data-bind="title"></h1>
+      <p data-bind="dateLong"></p>
+      <div id="countdown">
+        <div><b id="cd-d">0</b><span>Hari</span></div>
+        <div><b id="cd-h">0</b><span>Jam</span></div>
+        <div><b id="cd-m">0</b><span>Menit</span></div>
+        <div><b id="cd-s">0</b><span>Detik</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="verse">
+    <blockquote data-bind="verse"></blockquote>
+    <cite data-bind="verseRef"></cite>
+  </section>
+
+  <section class="intro">
+    <h2>Syalom</h2>
+    <p data-bind="intro"></p>
+  </section>
+
+  <!-- MEMPELAI -->
+  <section class="couple">
+    <article>
+      <img src="img/pria.jpg" alt="Mempelai pria">
+      <h2 data-bind="groomName"></h2>
+      <p data-bind="groomParents"></p>
+    </article>
+    <div class="amp">&amp;</div>
+    <article>
+      <img src="img/wanita.jpg" alt="Mempelai wanita">
+      <h2 data-bind="brideName"></h2>
+      <p data-bind="brideParents"></p>
+    </article>
+  </section>
+
+  <!-- ACARA -->
+  <section class="events">
+    <h2>Save The Date</h2>
+    <div class="event-list" id="eventList"></div>
+    <p class="invite" data-bind="invite"></p>
+  </section>
+
+  <!-- GALERI -->
+  <section class="gallery">
+    <h2>Gallery Foto</h2>
+    <div id="galleryGrid"></div>
+  </section>
+
+  <!-- AMPLOP DIGITAL -->
+  <section class="gift">
+    <h2>Amplop Digital</h2>
+    <p data-bind="giftText"></p>
+    <div id="giftList"></div>
+  </section>
+
+  <footer>
+    <p data-bind="closing"></p>
+    <h2 data-bind="title"></h2>
+  </footer>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" hidden><img alt=""></div>
+
+<button id="musicBtn" aria-label="Putar atau jeda musik" hidden>♪</button>
+<audio id="bgm" src="audio/audio.mp3" loop preload="none"></audio>
+
+<div id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
