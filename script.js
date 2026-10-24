@@ -7,15 +7,15 @@ const DATA = {
   brideName: "Lusia Konga Naha, S.Si",
   groomParents: "Anak ke-8, putra ke-4 dari pasangan Bapak Markus Mudi Kehewamarak (Alm) dan Ibu Mbati Ataluda (Alm)",
   brideParents: "Putri pertama, anak ke-2 dari pasangan Bapak Katanga Jongu Marada (Alm) dan Ibu Lawa Djati (Alm)",
-  countdownTo: "2026-10-25T08:00:00+08:00",
+  countdownTo: "2026-10-25T18:00:00+08:00",
   dateLong: "Minggu, 25 Oktober 2026",
   verse: "\u201cBerdua lebih baik dari pada seorang diri, karena dalam dua orang ada berkat. Kalau seorang jatuh, yang lain dapat mengangkatnya.\u201d",
   verseRef: "Pengkhotbah 4 : 9-10",
-  intro: "Tuhan membuat segala sesuatu indah pada waktunya. Indah saat Dia mempertemukan, indah saat Dia menumbuhkan kasih, dan indah saat Dia mempersatukan kami dalam suatu ikatan pernikahan kudus.",
-  invite: "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami.",
+  intro: "Tuhan membuat segala sesuatu indah pada waktunya. Indah saat Dia mempertemukan, indah saat Dia menumbuhkan kasih, dan indah saat Dia mempersatukan putra-putri kami dalam suatu ikatan pernikahan kudus.",
+  invite: "Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua putra-putri kami.",
   events: [
-    { name: "Pemberkatan Nikah", date: "Minggu, 25 Oktober 2026", time: "Pukul 08.00 WITA - selesai", place: "GKS Padiratana Mauliru", map: "GKS Padiratana Mauliru" },
-    { name: "Resepsi Pernikahan", date: "Minggu, 25 Oktober 2026", time: "Pukul 18.00 WITA s.d. selesai", place: "Rumah Mempelai Pria, Mauliru - Kamburuwai", map: "Mauliru Kamburuwai Sumba Timur" }
+    { name: "Pemberkatan Nikah", date: "Minggu, 25 Oktober 2026", time: "Pukul 08.00 WITA s.d. selesai", place: "GKS Padiratana Mauliru", link: "https://www.google.com/maps?q=-9.678321590,120.280863675", embed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3738.4286898457817!2d120.28086367478915!3d-9.678321590411286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c4c8569a8c31f89%3A0x14d7002ac097c3ac!2sGKS%20Padiratana!5e1!3m2!1sid!2sid!4v1792854097330!5m2!1sid!2sid" },
+    { name: "Resepsi Pernikahan", date: "Minggu, 25 Oktober 2026", time: "Pukul 18.00 WITA s.d. selesai", place: "Rumah Mempelai Pria, Mauliru - Kamburuwai", link: "https://maps.app.goo.gl/uW6qYfv6BxqcjgZT7", embed: "https://www.google.com/maps?q=-9.672840,120.288014&hl=id&z=17&output=embed" }
   ],
   giftText: "Doa restu Anda adalah karunia yang sangat berarti bagi kami.",
   gifts: [
@@ -38,7 +38,7 @@ if (guest) $("#guestName").textContent = guest;
 
 // Acara, peta, cerita, galeri, amplop
 $("#eventList").innerHTML = DATA.events.map(e =>
-  `<div class="event"><h3>${esc(e.name)}</h3><p>${esc(e.date)}</p><p>${esc(e.time)}</p><p>${esc(e.place)}</p><p><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(e.map)}" target="_blank" rel="noopener">Lihat lokasi</a></p></div>`).join("");
+  `<div class="event"><h3>${esc(e.name)}</h3><p>${esc(e.date)}</p><p>${esc(e.time)}</p><p>${esc(e.place)}</p><p><a href="${esc(e.link)}" target="_blank" rel="noopener">Buka di Google Maps</a></p><iframe src="${esc(e.embed)}" title="Peta ${esc(e.name)}" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`).join("");
 $("#galleryGrid").innerHTML = DATA.gallery.map((src, i) =>
   `<img src="${esc(src)}" alt="Foto ${i + 1}" loading="lazy">`).join("");
 
